@@ -63,5 +63,8 @@ public class App {
         conjunto.add(a2);
 
         System.out.println("Tamaño del conjunto: " + conjunto.size());
+
+        //Paso 6
+        
     }
 }
