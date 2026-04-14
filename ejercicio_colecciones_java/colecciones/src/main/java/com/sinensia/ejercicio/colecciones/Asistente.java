@@ -1,3 +1,5 @@
+package com.sinensia.ejercicio.colecciones;
+
 public class Asistente {
     private String nombre;
     private String horaLlegada;
