@@ -60,6 +60,41 @@ public class App {
 
 }
 
+```
 
+## Ejercicio de Consumer
+
+```java
+package com.sinensia.ejercicio.colecciones.collections.EjercicioFiltradoConPredicate;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
+
+public class App {
+
+    public static void main(String[] args){
+        record Jugador(String nombre, int edad, String posicion, double salario, boolean lesionado) {}
+
+        var plantilla = List.of(
+        new Jugador("Lamine Yamal", 17, "extremo", 6_000_000, false),
+        new Jugador("Pedri", 21, "centrocampista", 8_000_000, true),
+        new Jugador("Gavi", 20, "centrocampista", 5_000_000, true),
+        new Jugador("Araujo", 25, "defensa", 7_000_000, false),
+        new Jugador("Ter Stegen", 32, "portero", 12_000_000, true),
+        new Jugador("Raphinha", 27, "extremo", 9_000_000, false),
+        new Jugador("Fermín López", 21, "centrocampista", 3_000_000, false),
+        new Jugador("Pau Cubarsí", 17, "defensa", 2_000_000, false),
+        new Jugador("Lewandowski", 36, "delantero", 15_000_000, false),
+        new Jugador("De Jong", 27, "centrocampista", 14_000_000, true)
+);
+    
+        Consumer<Jugador>  imprimirNombre = j -> System.out.println(j.nombre());
+        Consumer<Jugador> mostrarFicha = j -> System.out.println("Nombre: " + j.nombre() + " | Posición: " + j.posicion() + " | Edad: " + j.edad());
+
+}
+
+}
 
 ```
