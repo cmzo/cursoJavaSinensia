@@ -9,6 +9,8 @@ En este repositorio se irán subiendo los ejercicios del curso brindado por Sine
 package com.sinensia.ejercicio.colecciones.collections.EjercicioFiltradoConPredicate;
 
 import java.util.List;
+import java.util.function.Predicate;
+
 
 public class App {
 
@@ -27,9 +29,8 @@ public class App {
         new Jugador("Lewandowski", 36, "delantero", 15_000_000, false),
         new Jugador("De Jong", 27, "centrocampista", 14_000_000, true)
 );
-    }
-
-            // ── Predicados básicos ────────────────────────────────────────────────────
+    
+        // ── Predicados básicos ────────────────────────────────────────────────────
 
         Predicate<Jugador> noLesionado    = j -> !j.lesionado();
         Predicate<Jugador> menores        = j -> j.edad() < 22;
@@ -50,12 +51,15 @@ public class App {
         Predicate<Jugador> convocable          = delanteroJoven.and(noLesionado);
 
 
+        // ── Formato de Salida ───────────────────────────────────────────────────────────
         plantilla.stream()
                 .filter(convocable)
                 .forEach(j -> System.out.println("nombre: " + j.nombre() + ", posición: " + j.posicion() + ", salario: " + String.format("%,.0f €", j.salario())));
 
-                
 }
+
+}
+
 
 
 ```
